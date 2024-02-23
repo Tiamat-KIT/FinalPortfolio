@@ -1,7 +1,7 @@
 import { getArticlesById } from "@/lib/newt"
 import parse from 'html-react-parser'
 
-async function Page(params: Readonly<{_id:string}>):Promise<JSX.Element> {
+async function Page(params: any):Promise<JSX.Element> {
     const article = await getArticlesById(params._id)
     return (
         <>
