@@ -2,7 +2,7 @@ import Modal from "@/components/parts/Modal"
 import { getArticlesById } from "@/lib/newt"
 import parse from 'html-react-parser'
 
-export default async function ShowModal(params: Readonly<{_id: string}>){
+export default async function ShowModal(params: {_id: string}){
     const article = await getArticlesById(params._id)
     
     return (
