@@ -1,8 +1,7 @@
 import { getArticlesById } from "@/lib/newt"
 import parse from 'html-react-parser'
-import { ModalProps } from "@/app/@modal/(.)blog/[_id]/page"
 
-export default async function Page(params: ModalProps):Promise<JSX.Element> {
+async function Page(params: Readonly<{_id:string}>):Promise<JSX.Element> {
     const article = await getArticlesById(params._id)
     return (
         <>
@@ -12,3 +11,4 @@ export default async function Page(params: ModalProps):Promise<JSX.Element> {
         
     )
 }
+export default Page
