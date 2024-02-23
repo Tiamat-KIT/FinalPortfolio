@@ -1,7 +1,8 @@
 import Modal from "@/components/parts/Modal"
 import { getArticlesById } from "@/lib/newt"
 import parse from 'html-react-parser'
-export type ModalProps = {
+
+interface ModalProps {
     _id: string;
 }
 export default async function ShowModal(params: ModalProps){
