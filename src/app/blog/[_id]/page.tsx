@@ -1,4 +1,4 @@
-import { ModalProps } from "@/app/@modal/(.)blog/[_id]/page"
+import type { ModalProps } from "@/app/@modal/(.)blog/[_id]/page"
 import { getArticlesById } from "@/lib/newt"
 import parse from 'html-react-parser'
 
