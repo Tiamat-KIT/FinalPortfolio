@@ -6,7 +6,7 @@ export type ModalProps =  Readonly<{
     _id: string
 }>
 
-export default async function ShowModal(params: ModalProps){
+export default async function ShowModal(params: ModalProps): Promise<JSX.Element>{
     const article = await getArticlesById(params._id)
     
     return (
