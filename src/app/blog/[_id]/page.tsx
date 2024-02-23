@@ -5,7 +5,7 @@ interface ModalProps {
     _id: string;
 }
 
-export default async function Page(params: ModalProps) {
+export default async function Page(params: Readonly<ModalProps>) {
     const article = await getArticlesById(params._id)
     return (
         <>

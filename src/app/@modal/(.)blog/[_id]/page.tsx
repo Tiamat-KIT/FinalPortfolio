@@ -5,7 +5,7 @@ import parse from 'html-react-parser'
 interface ModalProps {
     _id: string;
 }
-export default async function ShowModal(params: ModalProps){
+export default async function ShowModal(params: Readonly<ModalProps>){
     const article = await getArticlesById(params._id)
     
     return (
