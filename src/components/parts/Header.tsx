@@ -2,7 +2,7 @@ import { ModeToggle } from "./ToggleTheme";
 
 export default function NavigationHeader(){
     return (
-        <header className="bg-foreground dark:bg-background  h-14" style={{
+        <header className="bg-foreground dark:bg-background dark:border-white dark:border-b-2 h-14" style={{
             borderRadius: "0% 0% 40% 40%"
         }}>
             <div className="container mx-auto">

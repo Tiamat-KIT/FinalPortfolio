@@ -73,7 +73,7 @@ export default async function RootLayout({
                     .map((url, index) => {
                       return (
                         <Link key={index} href={url} legacyBehavior>
-                          <Badge className="w-36 md:w-28 lg:w-80 flex justify-center mt-3">
+                          <Badge className="bg-card text-foreground w-36 md:w-28 lg:w-80 flex justify-center mt-3">
                             {index + 1}代目
                           </Badge>
                         </Link>
