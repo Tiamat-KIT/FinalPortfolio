@@ -3,7 +3,7 @@ import { getArticlesById } from "@/lib/newt"
 import parse from 'html-react-parser'
 
 
-async function ShowModal(params: {_id: string}){
+async function ShowModal(params: any){
     const article = await getArticlesById(params._id)
     
     return (
