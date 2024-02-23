@@ -2,11 +2,8 @@ import Modal from "@/components/parts/Modal"
 import { getArticlesById } from "@/lib/newt"
 import parse from 'html-react-parser'
 
-type ModalProps =  Readonly<{
-    _id: string
-}>
 
-async function ShowModal(params: ModalProps): Promise<JSX.Element>{
+async function ShowModal(params: {_id: string}){
     const article = await getArticlesById(params._id)
     
     return (
