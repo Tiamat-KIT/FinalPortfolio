@@ -1,11 +1,8 @@
 import { getArticlesById } from "@/lib/newt"
 import parse from 'html-react-parser'
 
-interface ModalProps {
-    _id: string;
-}
 
-export default async function Page(params: Readonly<ModalProps>) {
+export default async function Page(params: { _id: string }) {
     const article = await getArticlesById(params._id)
     return (
         <>
