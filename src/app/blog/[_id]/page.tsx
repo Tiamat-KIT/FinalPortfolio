@@ -1,8 +1,9 @@
+import { ModalProps } from "@/app/@modal/(.)blog/[_id]/page"
 import { getArticlesById } from "@/lib/newt"
 import parse from 'html-react-parser'
 
 
-export default async function Page(params: Readonly<{_id: string}>) {
+export default async function Page(params: ModalProps) {
     const article = await getArticlesById(params._id)
     return (
         <>
