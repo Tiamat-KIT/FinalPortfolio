@@ -10,8 +10,8 @@ export default function NavigationHeader(){
             borderRadius: "0% 0% 40% 40%"
         }}>
             <div className="container mx-auto">
-                <div className="flex flex-row items-center hidden md:contents justify-center md:justify-between">
-                    <div>
+                <div className="flex items-center justify-center md:justify-between">
+                    <div className="hidden md:block">
                         <Sheet>
                             <SheetTrigger className="w-8 h-8">Open</SheetTrigger>
                             <SheetContent side="left">
