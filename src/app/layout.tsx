@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "泡沫のポートフォリオ",
   description: "泡沫（本名じゃない）のポートフォリオサイト。今まで作ったポートフォリオサイトの履歴とか、Zennで書いた記事の一覧とか、ブログとかを書いてます",
   icons: process.env.NODE_ENV === "production" ? "./utakata.ico"
-};
+}
 
 export default async function RootLayout({
   children,
