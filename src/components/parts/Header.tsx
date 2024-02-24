@@ -11,7 +11,7 @@ export default function NavigationHeader(){
         }}>
             <div className="container mx-auto">
                 <div className="flex items-center justify-center md:justify-between">
-                    <div className="hidden md:block">
+                    <div className="content md:hidden">
                         <Sheet>
                             <SheetTrigger className="w-8 h-8">Open</SheetTrigger>
                             <SheetContent side="left">
