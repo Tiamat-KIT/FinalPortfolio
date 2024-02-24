@@ -2,6 +2,7 @@ import Modal from "@/components/parts/Modal"
 import { getArticlesById } from "@/lib/newt"
 import parse from 'html-react-parser'
 
+export const revalidate = 0
 
 async function ShowModal(params: any){
     const article = await getArticlesById(params._id)
