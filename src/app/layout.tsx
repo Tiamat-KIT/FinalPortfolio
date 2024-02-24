@@ -11,6 +11,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { getArticles } from "@/lib/newt";
 import { getZennRssFeed } from "@/lib/zenn";
+import Aside from "@/components/parts/Aside";
 const fontSans = FontSans({ subsets: ["latin"],variable: "--font-sans" });
 
 export const metadata: Metadata = {
@@ -50,12 +51,11 @@ export default async function RootLayout({
               </h3>
               <PagenateBlog />
             </aside> */}
-            <main className="text-forebackground col-span-6 bg-slate-200 dark:bg-slate-500 col-span-8 rounded-lg">
+            <main className="text-forebackground bg-slate-200 dark:bg-slate-500 col-span-10 md:col-span-8 rounded-lg">
                 {children}
                 {modal}
             </main>
-            <aside 
-              className="bg-slate-200 dark:bg-slate-500 col-span-2 border border-black rounded-lg">
+            <Aside colSpan={2}>
               <h3>Blog</h3>
               <PagenateBlog blog={blog}/>
               <Separator className="w-36 lg:w-80 mx-auto"/>
@@ -82,8 +82,7 @@ export default async function RootLayout({
                     })}
                 </div>
               </div>
-              
-            </aside>
+            </Aside>
           </div>
         </ThemeProvider>
       </body>

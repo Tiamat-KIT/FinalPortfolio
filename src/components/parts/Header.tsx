@@ -1,3 +1,6 @@
+import { AccordionTrigger } from "@radix-ui/react-accordion";
+import { Accordion, AccordionContent, AccordionItem } from "../ui/accordion";
+import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { ModeToggle } from "./ToggleTheme";
 
 export default function NavigationHeader(){
@@ -6,8 +9,41 @@ export default function NavigationHeader(){
             borderRadius: "0% 0% 40% 40%"
         }}>
             <div className="container mx-auto">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center">
+                <div className="flex items-center justify-center md:justify-between">
+                    <div>
+                        <Sheet>
+                            <SheetTrigger className="w-8 h-8">Open</SheetTrigger>
+                            <SheetContent side="left">
+                                <Accordion type="single" collapsible className="w-full">
+                                    <AccordionItem value="item-1">
+                                        <AccordionTrigger>
+                                            Blog
+                                        </AccordionTrigger>
+                                        <AccordionContent>
+                                                aaa
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                    <AccordionItem value="item-2">
+                                        <AccordionTrigger>
+                                            Zenn RSS
+                                        </AccordionTrigger>
+                                        <AccordionContent>
+                                            aaa
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                    <AccordionItem value="item-3">
+                                        <AccordionTrigger>
+                                            これまでのポートフォリオ
+                                        </AccordionTrigger>
+                                        <AccordionContent>
+                                            aaaa
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                </Accordion>
+                            </SheetContent>
+                        </Sheet>
+                    </div>
+                    <div className="flex md:items-center">
                         <a href="/" className="text-white font-bold text-xl">泡沫Portfolio</a>
                     </div>
                     <div className="flex items-center gap-4">
