@@ -1,6 +1,8 @@
 import { getArticlesById } from "@/lib/newt"
 import parse from 'html-react-parser'
 
+export const revalidate = 0
+
 async function Page(params: any):Promise<JSX.Element> {
     const article = await getArticlesById(params._id)
     return (
