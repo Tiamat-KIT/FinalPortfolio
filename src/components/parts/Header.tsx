@@ -1,3 +1,4 @@
+"use client"
 import { AccordionTrigger } from "@radix-ui/react-accordion";
 import { Accordion, AccordionContent, AccordionItem } from "../ui/accordion";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
