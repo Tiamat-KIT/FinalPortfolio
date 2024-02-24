@@ -15,11 +15,11 @@ import { ZennRssFeedType, getZennRssFeed } from "@/lib/zenn";
 import LinkBadge from "./BadgeLinkAnchor";
 
 type PagenateContents = ZennRssFeedType[] | BlogPost[]; 
-export default function PagenateBlog({blog}:{blog: PagenateContents}) {
+export default function PagenateBlog({blog,toggle}:{blog: PagenateContents,toggle?: boolean}) {
     const [selected, setSelected] = useState<number>(0)
     return (
         <>
-            <div className="flex flex-col justify-center text-center container mx-auto px-[1.35rem]">
+            <div className={`flex flex-col justify-center text-center container mx-auto px-[1.35rem]`}>
             {blog.map((content, index) => {
                 if("pageContent" in content){ return (
                     <LinkBadge href={content.pageContent.link} title={content.pageContent.title as string} key={index} />
@@ -29,8 +29,8 @@ export default function PagenateBlog({blog}:{blog: PagenateContents}) {
                 )}
             })}
             </div>
-            <Pagination className="w-12 flex justify-center">
-                <div className="lg:block md:hidden ">
+            {toggle && <Pagination className="w-12 flex justify-center">
+                 <div className="lg:block md:hidden ">
                     <PaginationPrevious onClick={() => {if(selected > 0)setSelected((prop) => prop - 1)}}/>
                 </div>
                 <div className="lg:hidden md:block m-auto hover:bg-slate-600 " onClick={() => {if(selected > 0)setSelected((prop) => prop - 1)}}>
@@ -47,7 +47,7 @@ export default function PagenateBlog({blog}:{blog: PagenateContents}) {
                 <div className="lg:hidden md:block m-auto" onClick={() => setSelected((prop) => prop + 1)}>
                     <ArrowBigRightDashIcon />
                 </div>
-            </Pagination>
+            </Pagination>}
         </>
     )
 }

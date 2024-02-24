@@ -3,25 +3,34 @@ import { AccordionTrigger } from "@radix-ui/react-accordion";
 import { Accordion, AccordionContent, AccordionItem } from "../ui/accordion";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { ModeToggle } from "./ToggleTheme";
-
-export default function NavigationHeader(){
+import { AlignJustifyIcon } from "lucide-react";
+import { Button } from "../ui/button";
+import { ReactNode } from "react";
+export default function NavigationHeader(
+    {blog, zenn, portfolio}: Readonly<{blog: ReactNode, zenn: ReactNode, portfolio: ReactNode}>
+){
     return (
         <header className="bg-foreground dark:bg-background dark:border-white dark:border-b-2 h-14" style={{
             borderRadius: "0% 0% 40% 40%"
         }}>
             <div className="container mx-auto">
-                <div className="flex items-center justify-center md:justify-between">
+                <div className="flex items-center justify-between">
                     <div className="content md:hidden">
                         <Sheet>
-                            <SheetTrigger className="w-8 h-8">Open</SheetTrigger>
+                            <SheetTrigger className="w-8 h-8" >
+                                {/* <Button size="icon" className="text-background dark:text-white dark:bg-black">
+                                    <AlignJustifyIcon />
+                                </Button> */}
+                                <AlignJustifyIcon className="text-background dark:text-white mt-1"/>
+                            </SheetTrigger>
                             <SheetContent side="left">
                                 <Accordion type="single" collapsible className="w-full">
                                     <AccordionItem value="item-1">
                                         <AccordionTrigger>
                                             Blog
                                         </AccordionTrigger>
-                                        <AccordionContent>
-                                                aaa
+                                        <AccordionContent className="text-center justify-center align-center">
+                                            {blog}
                                         </AccordionContent>
                                     </AccordionItem>
                                     <AccordionItem value="item-2">
@@ -29,7 +38,7 @@ export default function NavigationHeader(){
                                             Zenn RSS
                                         </AccordionTrigger>
                                         <AccordionContent>
-                                            aaa
+                                            {zenn}
                                         </AccordionContent>
                                     </AccordionItem>
                                     <AccordionItem value="item-3">
@@ -37,7 +46,7 @@ export default function NavigationHeader(){
                                             これまでのポートフォリオ
                                         </AccordionTrigger>
                                         <AccordionContent>
-                                            aaaa
+                                        {portfolio}
                                         </AccordionContent>
                                     </AccordionItem>
                                 </Accordion>
