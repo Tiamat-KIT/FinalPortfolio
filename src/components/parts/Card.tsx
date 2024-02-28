@@ -24,7 +24,7 @@ export default function DevCard({content}: {content:DevPost}) {
                 <CardDescription>
                     {content.subtitle}
                 </CardDescription>
-                <img src={content.img.length !== 0 ? content.img[0].src : ""} alt={content.description} />
+                {content.img.length !== 0 &&<img src={content.img[0].src} alt={content.description} />}
             </CardContent>
             <CardFooter>
                 <Link legacyBehavior href={content.url !== undefined ? content.url.url : ""}>
