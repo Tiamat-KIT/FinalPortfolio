@@ -17,14 +17,14 @@ export default function DevCard({content}: {content:DevPost}) {
         <Card>
             <CardHeader>
                 <CardTitle>
-                    <h2>{content.title}</h2>
+                    {content.title}
                 </CardTitle>
             </CardHeader>
             <CardContent>
                 <CardDescription>
-                    <p>{content.subtitle}</p>
+                    {content.subtitle}
                 </CardDescription>
-                <img src={content.img[0].src} alt={content.description} />
+                <img src={content.img.length !== 0 ? content.img[0].src : ""} alt={content.description} />
             </CardContent>
             <CardFooter>
                 <Link legacyBehavior href={content.url !== undefined ? content.url.url : ""}>
