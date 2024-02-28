@@ -27,11 +27,11 @@ export default function DevCard({content}: {content:DevPost}) {
                 {content.img.length !== 0 &&<img src={content.img[0].src} alt={content.description} />}
             </CardContent>
             <CardFooter>
-                <Link legacyBehavior href={content.url !== undefined ? content.url.url : ""}>
+                {content.url !== undefined ? <Link legacyBehavior href={content.url.url}>
                     <Button>
-                        詳細を見る
+                        リポジトリを見る
                     </Button>
-                </Link>
+                </Link> : <Button variant="ghost" disabled>リポジトリ未公開</Button>}
             </CardFooter>
         </Card>
     )
