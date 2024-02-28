@@ -14,7 +14,7 @@ import { getZennRssFeed } from "@/lib/zenn";
 import Aside from "@/components/parts/Aside";
 const fontSans = FontSans({ subsets: ["latin"],variable: "--font-sans" });
 
-export const revalidate = 0
+// export const revalidate = 0
 
 export const metadata: Metadata = {
   title: "泡沫のポートフォリオ",
