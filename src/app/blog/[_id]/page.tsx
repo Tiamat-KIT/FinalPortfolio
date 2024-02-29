@@ -9,15 +9,15 @@ type Props = {
 
 export async function generateMetadata({params,searchParams}: Props,parent: ResolvingMetadata): Promise<Metadata> {
     const article = await getArticlesById(params._id)
-    const description = article?.body.replace(/<([^'">]|"[^"]*"|'[^']*')*>/g,"") as string
+    const description = article?.body.replace(/<([^'">]|"[^"]*"|'[^']*')*>/g,"")
     const ReturnMetadata: Metadata = {
         title: article?.title,
-        description: description.slice(0,100) + "...",
+        description: description!.slice(0,100) + "...",
         authors: {name: "Utakata",url: "https://github.com/Tiamat-KIT"},
         openGraph: {
             type: "article",
             title: article?.title,
-            description: description.slice(0,100) + "...",
+            description: description!.slice(0,100) + "...",
             url: `https://utakata-final-portfolio.vercel.app/blog/` + params._id,
             images: `https://utakata-final-portfolio.vercel.app/api/og?title=${article?.title}&author=Utakata`
         }
