@@ -33,10 +33,9 @@ export default async function RootLayout({
   const ZennRss = await getZennRssFeed()
   return (
     <html lang="ja">
-      {modal}
       <body className={
         cn(
-          "min-h-screen bg-background text-foreground font-sans antialiased z-10",
+          "min-h-screen bg-background text-foreground font-sans antialiased",
           fontSans.variable
         )
       }>
@@ -71,6 +70,7 @@ export default async function RootLayout({
               </div>
             }
           />
+          {modal}
           <div className="grid grid-cols-10 mx-auto gap-3 px-3 mt-3 h-fit">
             {/* <aside className="bg-green-200 col-span-2">
               <h3 className="text-xl text-center font-bold">
