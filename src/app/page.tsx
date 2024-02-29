@@ -16,7 +16,7 @@ export default async function Home() {
           このサイトは、ポートフォリオとして作成しました。<br />
         </p>
       </div>
-      <div className="info-card">
+      <div className="info-card my-3">
         <h3>泡沫のスキル</h3>
         <div className="flex flex-col gap-y-3">
           <div>
@@ -43,7 +43,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className="info-card">
+      <div className="info-card hidden md:block lg:block xl:block">
         <h3>開発したコンテンツ一覧</h3>
         <div className="grid grid-cols-2 gap-4">
           {DevContent.map((content, index) => {

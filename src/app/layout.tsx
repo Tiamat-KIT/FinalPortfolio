@@ -4,15 +4,15 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 import { ThemeProvider } from "@/components/parts/ThemeProvider";
 import NavigationHeader from "@/components/parts/Header";
-import Container from "@/components/parts/Container";
 import PagenateBlog from "@/components/parts/PagenateBlog";
 import {Separator} from "@/components/ui/separator";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { getArticles } from "@/lib/newt";
+import { getArticles, getDevArticles } from "@/lib/newt";
 import { getZennRssFeed } from "@/lib/zenn";
 import Aside from "@/components/parts/Aside";
 import Portfolio from "@/components/parts/Portfolio";
+import DevCard from "@/components/parts/Card";
 const fontSans = FontSans({ subsets: ["latin"],variable: "--font-sans" });
 
 export const revalidate = 0
@@ -37,7 +37,7 @@ export default async function RootLayout({
 }>) {
   const blog = await getArticles();
   const ZennRss = await getZennRssFeed()
-
+  const DevContent = await getDevArticles()
   return (
     <html lang="ja">
       <body className={
@@ -74,6 +74,19 @@ export default async function RootLayout({
                         </Link>
                       )
                     })}
+                </div>
+              </div>
+            }
+            develop={
+              <div className="container mx-auto px-[1.35rem]">
+                <div className="grid gap-2">
+                  {DevContent.map((content, index) => {
+                    return (
+                      <div className="flex my-auto py-1" key={index}>
+                          <Badge><Link href={content.url !== undefined ? content.url.url : ""} legacyBehavior>{content.subtitle}</Link></Badge>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             }

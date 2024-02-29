@@ -6,8 +6,9 @@ import { ModeToggle } from "./ToggleTheme";
 import { AlignJustifyIcon } from "lucide-react";
 import { Button } from "../ui/button";
 import { ReactNode } from "react";
+import { DevPost } from "@/lib/newt";
 export default function NavigationHeader(
-    {blog, zenn, portfolio}: Readonly<{blog: ReactNode, zenn: ReactNode, portfolio: ReactNode}>
+    {blog, zenn, portfolio,develop}: Readonly<{blog: ReactNode, zenn: ReactNode, portfolio: ReactNode,develop: ReactNode}>
 ){
     return (
         <header className="bg-foreground dark:bg-background dark:border-white dark:border-b-2 h-14" style={{
@@ -25,7 +26,7 @@ export default function NavigationHeader(
                             </SheetTrigger>
                             <SheetContent side="left">
                                 <Accordion type="single" collapsible className="w-full">
-                                    <AccordionItem value="item-1">
+                                    <AccordionItem value="item-1" className="font-extrabold text-xl">
                                         <AccordionTrigger>
                                             Blog
                                         </AccordionTrigger>
@@ -33,7 +34,7 @@ export default function NavigationHeader(
                                             {blog}
                                         </AccordionContent>
                                     </AccordionItem>
-                                    <AccordionItem value="item-2">
+                                    <AccordionItem value="item-2" className="font-extrabold text-xl">
                                         <AccordionTrigger>
                                             Zenn RSS
                                         </AccordionTrigger>
@@ -41,12 +42,20 @@ export default function NavigationHeader(
                                             {zenn}
                                         </AccordionContent>
                                     </AccordionItem>
-                                    <AccordionItem value="item-3">
+                                    <AccordionItem value="item-3" className="font-extrabold text-xl">
                                         <AccordionTrigger>
                                             これまでのポートフォリオ
                                         </AccordionTrigger>
                                         <AccordionContent>
                                         {portfolio}
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                    <AccordionItem value="item-4" className="font-extrabold text-xl">
+                                        <AccordionTrigger>
+                                            これまでの開発物
+                                        </AccordionTrigger>
+                                        <AccordionContent>
+                                        {develop}
                                         </AccordionContent>
                                     </AccordionItem>
                                 </Accordion>
