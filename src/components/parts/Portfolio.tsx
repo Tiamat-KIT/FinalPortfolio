@@ -11,7 +11,7 @@ export default function Portfolio() {
                 "https://utakataportfolio.vercel.app/",
                 "https://new-tiamat-portfolio.vercel.app/",
                 "https://utakata-newportfolio.vercel.app/",
-                `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` || "http://localhost:3000"]
+                `https://${ process.env.VERCEL_URL ? process.env.VERCEL_URL : process.env.NEXT_PUBLIC_VERCEL_URL}` || "http://localhost:3000"]
                 .map((url, index) => {
                     return (
                     <Link key={index} href={url} legacyBehavior>

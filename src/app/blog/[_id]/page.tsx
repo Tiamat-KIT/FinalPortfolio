@@ -17,8 +17,8 @@ export async function generateMetadata({params,searchParams}: Props,parent: Reso
             type: "article",
             title: article?.title,
             description: article?.body.slice(0,100) + "...",
-            url: `${process.env.NEXT_PUBLIC_VERCEL_URL}/blog/` + params._id,
-            images: `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${article?.title}&author=Utakata`
+            url: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/blog/` + params._id,
+            images: `https://${process.env.VERCEL_URL ? process.env.VERCEL_URL : process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${article?.title}&author=Utakata`
         }
     }
     return ReturnMetadata
