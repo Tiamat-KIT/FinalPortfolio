@@ -20,7 +20,12 @@ export const revalidate = 0
 export const metadata: Metadata = {
   title: "泡沫のポートフォリオ",
   description: "泡沫（本名じゃない）のポートフォリオサイト。今まで作ったポートフォリオサイトの履歴とか、Zennで書いた記事の一覧とか、ブログとかを書いてます",
-  icons: "/utakata.ico"
+  icons: "/utakata.ico",
+  openGraph: {
+    title: "泡沫のポートフォリオ",
+    description: "泡沫（本名じゃない）のポートフォリオサイト。今まで作ったポートフォリオサイトの履歴とか、Zennで書いた記事の一覧とか、ブログとかを書いてます",
+    images: `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=泡沫のポートフォリオ&author=Utakata`,
+  }
 }
 
 export default async function RootLayout({
