@@ -37,7 +37,9 @@ export default async function RootLayout({
 }>) {
   const blog = await getArticles();
   const ZennRss = await getZennRssFeed()
-  console.log(process.env.NEXT_PUBLIC_VERCEL_URL)
+  console.log("公開環境変数",process.env.NEXT_PUBLIC_VERCEL_URL)
+  console.log("環境変数",process.env.VERCEL_URL)
+
   return (
     <html lang="ja">
       <body className={
