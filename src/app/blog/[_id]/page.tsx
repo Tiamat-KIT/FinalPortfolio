@@ -16,7 +16,7 @@ export async function generateMetadata({params,searchParams}: Props,parent: Reso
         openGraph: {
             type: "article",
             title: article?.title,
-            description: parse(article?.body as string).toString().slice(0,100) + "...",
+            description: parse(article?.body as string).toString().replace(/<([^'">]|"[^"]*"|'[^']*')*>/g,"").slice(0,100) + "...",
             url: `https://utakata-final-portfolio.vercel.app/blog/` + params._id,
             images: `https://utakata-final-portfolio.vercel.app/api/og?title=${article?.title}&author=Utakata`
         }
