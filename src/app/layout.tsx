@@ -45,7 +45,6 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {modal}
           <NavigationHeader 
             blog={<PagenateBlog blog={blog}/>}
             zenn={<PagenateBlog blog={ZennRss.map((content) => {return content})}/>}
@@ -80,6 +79,7 @@ export default async function RootLayout({
             </aside> */}
             <main className="text-forebackground bg-slate-200 dark:bg-slate-500 col-span-10 md:col-span-8 rounded-lg">
                 {children}
+                {modal}
             </main>
             <Aside colSpan={2}>
               <h3>Blog</h3>
