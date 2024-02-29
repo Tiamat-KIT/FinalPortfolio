@@ -9,7 +9,7 @@ type Props = {
     searchParams: { [key: string]: string | string[] | undefined }
   }
 
-export async function genetateMeta({params,searchParams}: Props,parent: ResolvingMetadata): Promise<Metadata> {
+export async function genetateMetadata({params,searchParams}: Props,parent: ResolvingMetadata): Promise<Metadata> {
     const article = await getArticlesById(params._id)
     const ReturnMetadata: Metadata = {
         title: article?.title,
