@@ -7,8 +7,7 @@ import {
 
 export const runtime = "edge"
 
-
-export default function handler(req: NextRequest) {
+function handler(req: NextRequest) {
     try {
         const { searchParams } = new URL(req.url);
         const hasTitle = searchParams.has("title")
@@ -74,3 +73,5 @@ export default function handler(req: NextRequest) {
           });
         }
 }
+
+export {handler as GET}
