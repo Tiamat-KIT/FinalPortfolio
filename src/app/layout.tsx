@@ -39,6 +39,7 @@ export default async function RootLayout({
           fontSans.variable
         )
       }>
+        {modal}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -70,7 +71,6 @@ export default async function RootLayout({
               </div>
             }
           />
-          {modal}
           <div className="grid grid-cols-10 mx-auto gap-3 px-3 mt-3 h-fit">
             {/* <aside className="bg-green-200 col-span-2">
               <h3 className="text-xl text-center font-bold">
