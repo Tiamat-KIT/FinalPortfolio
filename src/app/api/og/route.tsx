@@ -14,51 +14,47 @@ function handler(req: NextRequest) {
         const title = hasTitle
          ? searchParams.get("title")?.slice(0, 100)
          : "Default Article Title"
+        const hasAuthor = searchParams.has("author")
+        const author = hasAuthor
+          ? searchParams.get("author")?.slice(0, 100)
+          : "Author"
 
          return new ImageResponse(
             (
-              <div
-                style={{
-                  backgroundColor: "#0000ff",
-                  backgroundSize: "100% 100%",
-                  height: "100%",
-                  width: "100%",
-                  display: "flex",
-                  textAlign: "left",
-                  alignItems: "flex-start",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                  flexWrap: "nowrap",
-                }}
-              >
-                <div
-                  style={{
-                    width: "100%",
-                    fontSize: 60,
-                    fontStyle: "normal",
-                    fontWeight: "bold",
-                    color: "#000",
-                    padding: "0 120px",
-                    lineHeight: 1.3,
-                    marginBottom: "30px",
-                    wordWrap: "break-word",
-                  }}
-                >
-                  {title}
-                </div>
-                <div
-                  style={{
-                    width: "100%",
-                    fontSize: 40,
-                    fontStyle: "normal",
-                    fontWeight: "bold",
-                    color: "#000",
-                    padding: "0 120px",
-                    lineHeight: 1.3,
-                  }}
-                >
-                  ✏️ OG Image Examples
-                </div>
+              <div style={{
+                display: 'flex',
+                width: '100%',
+                height: '100%',
+                // 右斜め下にグラデーション blue to cyan
+                backgroundImage: 'linear-gradient(135deg, #3B82F6, #10B981)',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+                  <div style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      width: '90%',
+                      height: '90%',
+                      backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                      color: 'black',
+                      fontFamily: 'Arial, sans-serif',
+                      padding: '20px',
+                      borderRadius: '20px',
+                  }}>
+                    <div style={{display: "flex",flexDirection: "column"}}>
+                      <h1 style={{
+                        fontSize: '4.25rem',
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                      }}>{title}</h1>
+                      <p style={{
+                        fontSize: '2.5rem',
+                        textAlign: 'center',
+                      }}>⌨ {author}</p>
+                    </div>
+                    
+                  </div>
               </div>
             ),
             {

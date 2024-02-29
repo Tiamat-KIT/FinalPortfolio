@@ -1,6 +1,3 @@
-import { getArticlesById } from "@/lib/newt"
-import { ResolvingMetadata, Metadata } from "next"
-
 export const revalidate = 0
 
 export default function Layout({children}: Readonly<{children: any}>) {
