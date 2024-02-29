@@ -33,9 +33,10 @@ export default async function RootLayout({
   const ZennRss = await getZennRssFeed()
   return (
     <html lang="ja">
+      {modal}
       <body className={
         cn(
-          "min-h-screen bg-background text-foreground font-sans antialiased",
+          "min-h-screen bg-background text-foreground font-sans antialiased z-10",
           fontSans.variable
         )
       }>
@@ -78,10 +79,7 @@ export default async function RootLayout({
               <PagenateBlog />
             </aside> */}
             <main className="text-forebackground bg-slate-200 dark:bg-slate-500 col-span-10 md:col-span-8 rounded-lg">
-                <div className="z-10">
-                  {children}
-                </div>
-                {modal}
+                {children}
             </main>
             <Aside colSpan={2}>
               <h3>Blog</h3>
