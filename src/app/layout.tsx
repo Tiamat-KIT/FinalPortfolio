@@ -78,7 +78,9 @@ export default async function RootLayout({
               <PagenateBlog />
             </aside> */}
             <main className="text-forebackground bg-slate-200 dark:bg-slate-500 col-span-10 md:col-span-8 rounded-lg">
-                {children}
+                <div className="z-10">
+                  {children}
+                </div>
                 {modal}
             </main>
             <Aside colSpan={2}>
