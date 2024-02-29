@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "泡沫のポートフォリオ",
     description: "泡沫（本名じゃない）のポートフォリオサイト。今まで作ったポートフォリオサイトの履歴とか、Zennで書いた記事の一覧とか、ブログとかを書いてます",
-    images: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=泡沫のポートフォリオ&author=Utakata`,
+    images: `https://utakata-final-portfolio.vercel.app/api/og?title=泡沫のポートフォリオ&author=Utakata`,
   }
 }
 
@@ -37,8 +37,6 @@ export default async function RootLayout({
 }>) {
   const blog = await getArticles();
   const ZennRss = await getZennRssFeed()
-  console.log("公開環境変数",process.env.NEXT_PUBLIC_VERCEL_URL)
-  console.log("環境変数",process.env.VERCEL_URL)
 
   return (
     <html lang="ja">
@@ -66,7 +64,7 @@ export default async function RootLayout({
                     "https://utakataportfolio.vercel.app/",
                     "https://new-tiamat-portfolio.vercel.app/",
                     "https://utakata-newportfolio.vercel.app/",
-                    process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000"]
+                    "https://utakata-final-portfolio.vercel.app" || "http://localhost:3000"]
                     .map((url, index) => {
                       return (
                         <Link key={index} href={url} legacyBehavior>
