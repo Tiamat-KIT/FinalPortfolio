@@ -53,6 +53,7 @@ export default async function Home() {
           })}
         </div>
       </div>
+      <iframe style="border:none;width:100%;" height="1237px" src="https://www.noway-form.com/ja/f/34c845b7-a334-4ec2-8df4-9f81b0f59f0d/embed" / >
     </main>
   );
 }
