@@ -85,4 +85,7 @@
   .normal-list {
     @apply list-disc list-inside
   }
+ iframe > html {
+  @apply p-3
+ }
 }
