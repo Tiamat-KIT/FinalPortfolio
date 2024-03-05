@@ -53,7 +53,9 @@ export default async function Home() {
           })}
         </div>
       </div>
-      <iframe className="border-none p-3	h-[1237px] w-full" src="https://www.noway-form.com/ja/f/34c845b7-a334-4ec2-8df4-9f81b0f59f0d/embed" / >
+      <div className="info-card mt-5">
+        <iframe className="border-none p-3	h-[1237px] w-full" src="https://www.noway-form.com/ja/f/34c845b7-a334-4ec2-8df4-9f81b0f59f0d/embed" / >
+      </div>
     </main>
   );
 }
