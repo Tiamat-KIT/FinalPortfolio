@@ -1,6 +1,6 @@
 import DevCard from "@/components/parts/Card";
+import ContactForm from "@/components/parts/ContactForm";
 import PagenateBlog from "@/components/parts/PagenateBlog";
-import IframeForm from "@/components/parts/iframeEl";
 import { getDevArticles } from "@/lib/newt";
 import Image from "next/image";
 
@@ -54,7 +54,7 @@ export default async function Home() {
           })}
         </div>
       </div>
-      <IframeForm />
+      <ContactForm />
     </main>
   );
 }
