@@ -1,5 +1,4 @@
 import DevCard from "@/components/parts/Card";
-import ContactForm from "@/components/parts/ContactForm";
 import PagenateBlog from "@/components/parts/PagenateBlog";
 import { getDevArticles } from "@/lib/newt";
 import Image from "next/image";
