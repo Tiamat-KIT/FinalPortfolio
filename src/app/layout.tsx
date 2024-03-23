@@ -91,17 +91,17 @@ export default async function RootLayout({
               </div>
             }
           />
-          <div className="grid grid-cols-10 mx-auto gap-3 px-3 mt-3 h-fit">
+          <div /* className="grid grid-cols-10 mx-auto gap-3 px-3 mt-3 h-fit" */>
             {/* <aside className="bg-green-200 col-span-2">
               <h3 className="text-xl text-center font-bold">
                 Research
               </h3>
               <PagenateBlog />
             </aside> */}
-            <main className="text-forebackground bg-slate-200 dark:bg-slate-500 col-span-10 md:col-span-8 rounded-lg">
+            <main /* className="text-forebackground bg-slate-200 dark:bg-slate-500 col-span-10 md:col-span-8 rounded-lg" */>
                 {children}
             </main>
-            <Aside colSpan={2}>
+            {/* <Aside colSpan={2}>
               <h3>Blog</h3>
               <PagenateBlog blog={blog} toggle/>
               <Separator className="w-36 lg:w-80 mx-auto"/>
@@ -109,7 +109,7 @@ export default async function RootLayout({
               <PagenateBlog toggle blog={ZennRss.map((content) => {return content})}/>
               <Separator className="w-36 lg:w-80 mx-auto"/>
               <Portfolio  />
-            </Aside>
+            </Aside> */}
           </div>
         </ThemeProvider>
       </body>
